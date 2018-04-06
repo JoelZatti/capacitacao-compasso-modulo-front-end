@@ -1,0 +1,83 @@
+<DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Fale conosco</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Joel Zatti">
+    </head>
+
+    <body>
+        <header>
+            <figure>
+                <img width="200" height="300" border="3" src="assets/img/01.jpg" title="Mark" alt="Mark" />
+            </figure>
+            <!--<img  width="200" height="200" border="3" src="../02.jpg" title="Zeno Rocha" alt="Zeno Rocha" /> -->
+            <h1>Curriculum Vitae</h1>
+            <h2>Joel Zatti</h2>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="Curriculum.html">Curriculum Vitae</a>
+                    </li>
+                    <li>
+                        <a href="fale conosco.html">Fale Conosco</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/JoelZatti/capacitacao-compasso-modulo-front-end" target="_blanc">Projeto HTML Compasso</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <h2>Fale conosco</h2>
+            <form>
+                <div>
+                    <label for="name">Nome:</label>
+                    <input type=" text" id="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" required>
+                </div>
+                
+                <div>
+                    <label for="website">Website:</label>
+                    <input type="url" id="website">
+                </div>
+                <div>
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone>" required>
+                </div>
+                <div>
+                    <label for="city">Cidade:</label>
+                    <input type="text" id="city>" required>
+                </div>
+                <div>
+                    <label for="state" >Estado:</label>
+                    <select id="state" required>
+                        <option value="RS">RS</option>
+                        <option value="SC">SC</option>
+                        <option value="PR">PR</option>
+                        <option value="SP">SP</option>
+                        <option value="RJ">RJ</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="subject">Assunto:</label>
+                    <select id="subject" required>
+                        <option value="sugestao">Sugestão</option>
+                        <option value="critica">Crítica</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="message">Mensagem</label>
+                    <textarea name="" id="message" placeholder="Escreva a sua Mensagem aqui" maxlength="140" cols="30" rows="5"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+                <button type="reset">Cancelar</button>
+            </form>
+        </section>
+    </body>
+
+    </html>
