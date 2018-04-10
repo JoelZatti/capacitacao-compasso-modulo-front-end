@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fale Conosco</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Tobias Rocha da Rosa">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    </head>
+    <body>
+        <header class="main-header">
+            <figure class="container-img">
+                <img src="assets/img/01.jpg" title="tio bill" alt="tio bill"/>
+            </figure>
+            <h1 class="main-title">Joel Zatti</h1>
+            <nav class="menu">
+                <ul class="container-item">
+                    <li class="item">
+                        <a href="curriculum.html">Curriculum Vitae</a>
+                    </li>
+                    <li class="item">
+                        <a href="fale-conosco.html">Fale Conosco</a>
+                    </li>
+                    <li class="item">
+                        <a href="https://github.com/tobiassrocha?tab=repositories" target="_blank">Projetos Pessoais</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section>            
+            <form class="main-form">
+                <h2 class="title">Fale Conosco</h2>
+                <div class="container-text">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="container-text radio" >
+                    <label>
+                        <input type="radio" name="sex" value="masculino">Masculino
+                    </label>
+                    <label>
+                        <input type="radio" name="sex" value="feminino">Feminino
+                    </label>
+                    <label>
+                        <input type="radio" name="sex" value="outros">Outros
+                    </label>    
+                </div>
+                <div class="container-text">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="container-text">
+                    <label for="website">Website:</label>
+                    <input type="url" id="website">
+                </div>
+                <div class="container-text">
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" pattern="[0-9]{9,9}" required>
+                </div>
+                <div class="container-text">
+                    <label for="city">Cidade:</label>
+                    <input type="text" id="city" required>
+                </div>
+                <div class="container-text">
+                    <label for="state">Estado</label>
+                    <select id="state" required>
+                        <option value="RS">RS</option>
+                        <option value="SC">SC</option>
+                        <option value="PR">PR</option>
+                        <option value="SP">SP</option>
+                    </select>
+                </div>
+                <div class="container-text">
+                    <label for="subject">Assunto:</label>
+                    <select id="subject" required>
+                        <option value="sugestao">Sugestão</option>
+                        <option value="critica">Crítica</option>
+                    </select>
+                </div>
+                <div class="container-text">
+                    <label for="archive">Arquivo:</label>
+                    <input type="file" id="archive">
+                </div>
+                <div class="container-text">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" maxlength="140" cols="30" rows="5" placeholder="Escreva sua mensagem aqui"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar</button>
+                <button type="Reset" class="btn-reset">Cancelar</button>
+            </form>
+        </section>
+        <footer class="main-footer">Todos os direitos reservados.</footer>
+    </body>
+</html>
