@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        //Comentário de uma única linha.
+
+        /*Comentário de mais de uma linha*/
+        function nomeDaFuncao(){
+            console.log(nome);
+        };//Encerra a função, mas não precisa colocar o ponto e vírgula.
+        
+        nomeDaFuncao();
+        var nome = "Joel Zatti"; //const = constante, let= variável de escopo.
+        console.log(nome); //Serve para debugar o código.   
+        
+
+        var redirecionamento = function(){
+            location.href = "http://www.google.com.br";
+        };
+
+        //setTimeout(o que fazer, quanto tempo);  
+        setTimeout(redirecionamento, 5000);         
+        
+        //setTimeout("document.location = 'http://www.google.com.br'",5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="txt_nome">
+
+    <input type="text" id="txt_1">
+    <input type="text" id="txt_2">
+    <input type="text" id="resultado">
+
+    <a href="http://google.com" onclick="return confirm('Deseja redirecionar?')">
+        Google.com
+    </a>
+    <a href="http://www.compasso.com.br" id="linkcompasso"> Compasso.com.br
+    </a>
+    <a href="somar" id="soma">
+        Somar
+    </a>
+    <script>
+
+        var $campo1 = document.getElementById();
+        var $campo2;
+
+        var $armazena = document.getElementById($campo1 + $campo2);
+
+
+    </script>
+
+
+    <script>
+        var $link_compasso = document.getElementById('linkcompasso');
+        var $input_nome = document.getElementById('txt_nome');
+        //console.log($link_compasso);
+        // $link_compasso.innerHTML = "Testando o Javascript";//A váriavel se tornou uma instância.
+        $link_compasso.onclick = function () {
+            //alert("Você clicou!");
+            //texto do link console.log($link_compasso.innerHTML);
+            //ou this.innerHTML
+            //console.log(this.innerHTML);//captura em qual clicou.
+        };
+
+        $input_nome.value = this.innerHTML;
+
+        return false;
+
+        $input_nome.onfocus = function () {
+            $input_nome.value = "Novo Texto";
+        };
+
+        $input_nome.onblur = function () {
+            $input_nome.value = "";
+        };
+
+
+        //focus(entra no campo) blur(sai do campo)
+    </script>
+
+</body>
+
+</html>
