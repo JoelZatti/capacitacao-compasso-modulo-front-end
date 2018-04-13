@@ -12,7 +12,6 @@
         }
     </style>
 
-
 </head>
 
 <body>
@@ -33,36 +32,106 @@
 
         var $campo_busca = document.getElementById('campo-busca');
         var $container_resultados = document.getElementById('container-resultado');
+        var $sugestoes_produtos = document.getElementById('sugestoes-produto');
+        var $resultado_busca = document.getElementById('resultado-busca');
         var $ar_sugestoes_produtos = [
             "Detergente",
             "Café",
             "Erva-mate",
             "Cerveja"
         ];
+        // array de sugestões de produtos.
+        var $ar_resultado_busca = [
+            {
+                "nome": "Intel ",
+                "descricao": "texto texto ",
+                "img": null,
+                "link": "http://compasso.com.br ",
+                "preco": 10.5
+
+            },//objeto
+            {
+                "nome": "Apple",
+                "descricao": "outro texto ",
+                "img": null,
+                "link": "http://google.com.br ",
+                "preco": 20000.5
+
+            },//objeto
+            {
+                "nome": "Asus",
+                "descricao": "outro texto texto ",
+                "img": null,
+                "link": "http://apple.com ",
+                "preco": 10000.59
+
+            }//objeto
+        ];
+        cl($resultado_busca);
 
         function cl($msg) {
             if ($debug) console.log($msg);
         };
 
-        function renderizaSugestoes(){
-            for(var $i = 0; $i < $ar_sugestoes_produtos.length; $i++){
-                cl($ar_sugestoes_produtos[$i]);
+        function renderizaSugestoes() {
+            var $retorno = "";
+
+            // for(var $i = 0; $i < $ar_sugestoes_produtos.length; $i++){
+            //     cl($ar_sugestoes_produtos[$i]);
+            // };
+
+            for (var $i in $ar_sugestoes_produtos) {
+                // cl($ar_sugestoes_produtos[$i]);
+                $retorno += "<p>" + $ar_sugestoes_produtos[$i] + "<p>";
+                // $retono = retorno + "<p>"+$sugestoes_produtos+"</p>";
             };
+
+            $sugestoes_produtos.innerHTML = $retorno;
+        };
+
+        function renderizaResultadoBusca() {
+            var $retorno = "";
+            for (var $i in $ar_resultado_busca) {
+                $retorno += "<div>"+
+                            "<h3>" + $ar_resultado_busca[$i].nome + "</h3>"+
+                            "<p>" +$ar_resultado_busca[$i].descricao+"</p>"+
+                            "<p>" +$ar_resultado_busca[$i].img+"</p>"+
+                            "<p>" +$ar_resultado_busca[$i].link+"</p>"+
+                            "<p>" +$ar_resultado_busca[$i].preco+"</p>"+
+                            "<a href='#'>Veja mais</a>"+
+                            "</div>";
+                // $retono = retorno + "<p>"+$sugestoes_produtos+"</p>";
+            };
+
+            $resultado_busca.innerHTML = $retorno;
 
         };
 
-        renderizaSugestoes();
+
 
         $campo_busca.onfocus = function () {
             // console.log('Entrou no campo');
             cl('Entrou no campo');
-            $container_resultados.style.display = "block";
+
+            if (this.value.length === 0) {//compara o tipo com os 3 iguais
+                cl('Exibe sugestões esconde lista');
+                $container_resultados.style.display = "block";
+                $resultado_busca.style.display = "none";
+
+            } else {
+                cl('Exibe lista esconde sugestões');
+                $resultado_busca.style.display = "none";
+                $container_resultados.style.display = "busca";
+
+            }
         };
         $campo_busca.onblur = function () {
             // console.log('Saiu do campo');
             cl('Saiu do campo')
             $container_resultados.style.display = "none";
         };
+
+        renderizaSugestoes();
     </script>
 
 </body>
