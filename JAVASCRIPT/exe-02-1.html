@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #container-resultado {
+            display: none;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <form action="" class="js-teste" id="frm-busca">
+        <input type="search" id="campo-busca">
+    </form>
+
+    <div id="container-resultado">
+        <h2>Resultado de busca</h2>
+        <div id="sugestoes-produto"></div>
+        <div id="resultado-busca"></div>
+    </div>
+
+    <script>
+        "use strict";//Obriga inicializar todas as variáveis
+
+        var $debug = true;
+
+        var $campo_busca = document.getElementById('campo-busca');
+        var $container_resultados = document.getElementById('container-resultado');
+        var $ar_sugestoes_produtos = [
+            "Detergente",
+            "Café",
+            "Erva-mate",
+            "Cerveja"
+        ];
+
+        function cl($msg) {
+            if ($debug) console.log($msg);
+        };
+
+        function renderizaSugestoes(){
+            for(var $i = 0; $i < $ar_sugestoes_produtos.length; $i++){
+                cl($ar_sugestoes_produtos[$i]);
+            };
+
+        };
+
+        renderizaSugestoes();
+
+        $campo_busca.onfocus = function () {
+            // console.log('Entrou no campo');
+            cl('Entrou no campo');
+            $container_resultados.style.display = "block";
+        };
+        $campo_busca.onblur = function () {
+            // console.log('Saiu do campo');
+            cl('Saiu do campo')
+            $container_resultados.style.display = "none";
+        };
+    </script>
+
+</body>
+
+</html>
