@@ -38,6 +38,7 @@ $(function () {
             //cria uma nova div
             var $div = $("<div>");
             var $h1 = $("<h1>");
+            var $p = $("<p>");
 
             //adiciona o elemento html nessa div
             // $div.html(obj.nome);
@@ -45,11 +46,18 @@ $(function () {
             //adiciona o elemento h1 dentro da div
             $h1.html(obj.nome);
 
+            //adiciona o valor no paragrafo
+            $p.html(obj.valor);
+
             //adiciona o elemento h1 dentro da div
             $div.append($h1);
 
+            //adiciona o p dentro da div
+            $div.append($p);
+
             //adiciono o objeto na div no container #produto
             $div_produtos.append($div);
+            
         });
     }
 
@@ -58,7 +66,7 @@ $(function () {
         $ar_produtos.push(
             {
                 "nome" : $txt_nome_produto.val(),
-                "preco" : $txt_preco_produto.val()
+                "valor" : $txt_preco_produto.val()
             }
         );
         renderizaProdutos();
