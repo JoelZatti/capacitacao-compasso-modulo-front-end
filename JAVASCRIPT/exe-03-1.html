@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
     <!--<input type="text" id="txt_nome">-->
     <div id="produtos"></div>
-    <div id="frm_cadastro"></div>
-    
-    <script src="jquery-3.3.1.min.js"></script><!-- Sempre inserir antes do script -->
+
+    <div class="msg-sucesso hide">
+        Cadastro efetuado com sucesso!
+    </div>
+
+    <div id="div_frm_cadastro">
+
+        <form class="js-frm-cadastro">
+            <input type="text" placeholder="Título produto">
+            <input type="text" placeholder="Preço">
+            <button type="submit">Cadastro</button>
+        </form>
+
+    </div>
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <!-- Sempre inserir antes do script -->
     <script src="script.js"></script>
 </body>
+
 </html>
