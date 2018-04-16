@@ -14,8 +14,14 @@ $(function () {
         }, 2000);*/
     var $div_produtos = $('#produtos');
     var $div_frm_cadastro = $('#div_frm_cadastro');
-    var $txt_nome_produto = $div_frm_cadastro.find('input:nth-child(1)');//pega o 1 filho
-    var $txt_preco_produto = $div_frm_cadastro.find('input:nth-child(2)');//pega o 2 filho
+
+    //var $txt_nome_produto = $div_frm_cadastro.find('input:nth-child(1)');//pega o 1 filho
+    // var $txt_preco_produto = $div_frm_cadastro.find('input:nth-child(2)');//pega o 2 filho
+
+    /*outra forma de fazer*/
+    var $txt_nome_produto = $div_frm_cadastro.find('#txt-nome');//pega o 1 filho
+    var $txt_preco_produto = $div_frm_cadastro.find('#txt-preco');//pega o 2 filho
+    var $msg_sucesso = $(".js-msg-sucesso");
 
     var $ar_produtos = [
         { "nome": "Produto 1", "valor": 10.5 },
@@ -24,7 +30,7 @@ $(function () {
     ];
 
     function renderizaProdutos() {
-        //limpoos objetos dentro da div
+        //limpo os objetos dentro da div
         $div_produtos.empty();
 
         $.each($ar_produtos, function (key, obj) {
@@ -47,12 +53,32 @@ $(function () {
         });
     }
 
-    $div_frm_cadastro.find(".js-frm-cadastro").submit(function(e){
+    $div_frm_cadastro.find(".js-frm-cadastro").submit(function (e) {
         e.preventDefault();//usar com cuidado!!!
-        console.log($txt_nome_produto.val());
-        console.log($txt_preco_produto.val());
+        $ar_produtos.push(
+            {
+                "nome" : $txt_nome_produto.val(),
+                "preco" : $txt_preco_produto.val()
+            }
+        );
+        renderizaProdutos();
 
     });
 
     renderizaProdutos();
+
+        //$(".js-frm-cadastro").reset();//limpa todos os campos.
+
+
+        //limpar o formulario de cadastro
+        $(this)[0].reset();//pega o 1 indice do formulario e limpa todos os campos.
+
+        //ao terminar o cadastro exibir a div de sucesso por 5 segundos
+        $msg_sucesso.removeClass('hide');
+        setTimeout(function(){
+            $msg_sucesso.add('hide');
+        }, 5000);
+
+    
+    
 });
