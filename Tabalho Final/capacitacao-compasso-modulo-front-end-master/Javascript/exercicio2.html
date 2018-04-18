@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" name="" id="txt_nome">
+
+    <a id="link1" href="http://www.google.com.br" onclick="return confirm('Deseja ir')">Google</a>
+    <br>
+    <a id="linkCompasso" href="http://www.compasso.com.br">Compasso</a>
+
+
+    <script>
+
+        var linkCompasso = document.getElementById('linkCompasso');
+        var txtNome = document.getElementById('txt_nome');
+        
+        //console.log(linkCompasso);
+        //linkCompasso.innerHTML = "Trocou";
+
+        linkCompasso.onclick = function(e){
+            txtNome.value = this.innerHTML;
+            return false;
+        }
+
+        txtNome.onblur = function(e){
+            this.value = "";
+        }
+
+        txtNome.onfocus = function(e){
+            this.value = "asdf";
+        }
+
+        
+        
+
+    </script>
+    
+</body>
+</html>

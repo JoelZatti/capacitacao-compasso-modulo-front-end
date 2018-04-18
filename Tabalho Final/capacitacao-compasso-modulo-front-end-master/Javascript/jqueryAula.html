@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="produtos"></div>
+
+    <div class="msg-sucesso hide">Cadastro efetuado com sucesso!</div>
+
+    <div id="div-frm-cadastro">
+        <form id="frm-cadastro" class="js-frm-cadastro">
+            <input type="text" id="txt-nome" placeholder="Titulo produto" required>
+            <input type="number" id="txt-preco" placeholder="preco" required>
+
+            <button id="btn-cadastrar" type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

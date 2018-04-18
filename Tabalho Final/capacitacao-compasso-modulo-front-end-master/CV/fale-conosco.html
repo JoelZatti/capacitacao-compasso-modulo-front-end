@@ -1,0 +1,112 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Crisley">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Fale Conosco</title>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <figure class="container-img">
+            <img src="assets/img/person-male.png" alt="" title="">
+        </figure>
+        <h1 class="main-title"> NOME PESSOA </h1>
+        <nav class="menu">
+            <ul class="container-item">
+                <li class="item"><a href="curriculum.html"> Curriculum Vitae </a>
+                </li>
+                <li class="item"><a href="fale-conosco.html"> Fale Conosco </a></li>
+                <li class=""><a href="https://github.com/CrisleyAlves?tab=repositories" target="_blank"> Projetos </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        
+        <form action="#" method="POST" class="main-form">
+
+            <h2 class="title">Fale conosco</h2>
+
+            <div class="container-text">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" required>
+            </div>
+
+            <div class="container-text radio">
+                    <label for="masculino">
+                        <input type="radio"  id="masculino" name="sexo" value="masculino" checked> Masculino
+                    </label>
+                    <label for="feminino">
+                        <input type="radio" id="feminino" name="sexo" value="feminino"> Feminino
+                    </label>
+            </div>
+
+            <div class="container-text">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            <div class="container-text">
+                <label for="telefone">Telefone</label>
+                <input type="tel" name="telefone" id="telefone" title="99999999" required pattern="[0-9]{9,9}">
+            </div>
+
+            <div class="container-text">
+                <label for="nome">Cidade</label>
+                <input type="text" name="cidade" id="cidade" required>
+            </div>
+
+            <div class="container-text">
+                <label for="estado">Estados</label>
+                <select name="estado" id="estado" required>
+                    <option value="">Selecione...</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SC">Santa Catarina</option>
+                </select>
+            </div>
+
+            <div class="container-text">
+                <label for="assunto">Assunto</label>
+                <select name="assunto" id="assunto" required>
+                    <option value="">Selecione...</option>
+                    <option value="A">Assunto A</option>
+                    <option value="B">Assunto B</option>
+                    <option value="C">Assunto C</option>
+                </select>
+            </div>
+
+            <div class="container-text">
+                <label for="site">Site</label>
+                <input type="url" name="site" id="site">
+            </div>
+
+            <div class="container-text">
+                <label for="arquivo">Arquivo</label>
+                <input type="file" name="file" id="file">
+            </div>
+
+            <div class="container-text">
+                <label for="mensagem">Mensagem</label>
+                <br>
+                <textarea name="mensagem" id="mensagem" cols="30" rows="5" placeholder="Mensagem" maxlength="140" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar</button>
+            <button type="reset"  class="btn-reset">Cancelar</button>
+
+        </form>
+    </section>
+
+    <footer class="main-footer">
+        Todos os direitos reservador. @TM
+    </footer>
+
+</body>
+
+</html>

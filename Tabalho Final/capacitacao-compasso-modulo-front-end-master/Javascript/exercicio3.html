@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #container-resultado{
+            display: none;
+        }
+
+        .produtos{
+            box-sizing: border-box;
+            border: 1px solid #e6e6e6;
+            width: 200px;
+            float: left;
+            margin-right: 20px;
+            padding: 10px;
+            opacity: 0.8;
+            transition: 0.7s;
+        }
+
+        .produtos:hover{
+            opacity: 1;
+            cursor: pointer;
+            background-color: #e6e6e6;
+            transition: 0.7s;
+        }
+
+        .produtos a{
+            color: #004D40;
+            text-decoration: none;
+        }
+
+        .produtos img{
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+
+    <form action="#" id="frm-busca">
+        <input type="search" id="campo-busca">
+    </form>
+
+    <div id="container-resultado">
+        <h2>Resultado de Busca</h2>
+        <div id="sugestoes-produtos"></div>
+        <div id="resultado-busca">
+            RES
+        </div>
+    </div>
+
+    <script>
+        
+        //obriga a inicialização de todas as variáveis
+        "use strict";
+
+        var debug = true;
+        var frmBusca = document.getElementById('frm-busca');
+        var campoBusca = document.getElementById('campo-busca');
+        var containerResultado = document.getElementById('container-resultado');
+        var sugestoesProdutos = document.getElementById('sugestoes-produtos');
+        var resultadoBusca = document.getElementById('resultado-busca');
+
+        function cl(msg){
+            if(debug) console.log(msg);
+        }
+
+        var arSugestoesProdutos = [
+            "Detergente",
+            "Café",
+            "Erva",
+            "Cerveja"
+        ];
+
+        var arResultadoBusca = [
+            {
+                "nome": "Computador Dell",
+                "descricao": "Descrição",
+                "img": "assets/img/produto.png",
+                "link": "http://www.compasso.com.br",
+                "preco": "R$: "+300.00
+            },
+            {
+                "nome": "HP",
+                "descricao": "Outra descrição",
+                "img": "assets/img/produto.png",
+                "link": "http://www.compasso.com.br",
+                "preco": "R$: "+300.00
+            }
+        ];
+
+        function renderizaSugestoes(){
+            var string = "";
+            for( var i in arSugestoesProdutos){
+                string += "<p>"+arSugestoesProdutos[i]+"</p>";
+            }
+            sugestoesProdutos.style.display = "block";
+            sugestoesProdutos.innerHTML = string;
+        }
+
+        function renderizaResultadoBusca(){
+            var string = "";
+            for( var i in arResultadoBusca){
+                string += "<div class='produtos'>";
+                string += "<h3>"+arResultadoBusca[i].nome+"</h3>";
+                string += "<img src='"+arResultadoBusca[i].img+"' />";
+                string += "<p>"+arResultadoBusca[i].preco+"</p>";
+                string += "<a href='"+arResultadoBusca[i].link+"'> ver mais </a>";
+                string += "</div>";
+            }
+            resultadoBusca.style.display = "block";
+            resultadoBusca.innerHTML = string;
+        }
+
+        
+        
+        campoBusca.onfocus = function(){
+
+            if(campoBusca.value === ""){
+                cl('exibe sugestao, esconde lista');
+                containerResultado.style.display = "block";
+                resultadoBusca.style.display = "none";
+                renderizaSugestoes();
+            }else{
+                cl('exibe lista, esconde sugestão');
+                containerResultado.style.display = "block";
+                resultadoBusca.style.display = "block";
+                
+                renderizaResultadoBusca();
+
+                sugestoesProdutos.style.display = "none";
+            }
+            
+        }
+
+        campoBusca.onblur = function(){
+            if(campoBusca.value.length === 0)
+                containerResultado.style.display = "none";
+        }
+
+
+
+        function teste(array){
+            var string = "";
+            for( var i in array){
+                if(array[i] instanceof Object)
+                    console.log('é objeto');
+                else
+                    console.log("é string");
+            }
+        }
+    
+    </script>
+    
+</body>
+</html>
